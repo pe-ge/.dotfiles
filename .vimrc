@@ -9,7 +9,7 @@ syntax on
 " Set the default file encoding to UTF-8:
 set encoding=utf-8
 
-" solarized
+" solarized theme
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 set background=dark
@@ -19,19 +19,24 @@ set nowrap
 set modeline
 set list
 set list listchars=tab:»·,trail:·
+
 " To control the number of space characters that will be inserted when the tab key is pressed
 set tabstop=4
+
 " To change the number of space characters inserted for indentation
 set shiftwidth=4
 set softtabstop=4
+
 " To insert space characters whenever the tab key is pressed
 set expandtab
+
 " display line number
 set number
+
 " using mouse
 set mouse=a
 
-" show whole file in vimdiff
+" show whole files in vimdiff
 if &diff                             " only for diff mode/vimdiff
   set diffopt=filler,context:1000000 " filler is default and inserts empty lines for sync
 endif
@@ -39,9 +44,6 @@ endif
 " vsplit navigations
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-J> <C-W><C-J>
-
-" Enable folding with the spacebar
-nnoremap <space> za
 
 " no swap files
 set noswapfile
@@ -63,7 +65,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " Enable powerfonts
 let g:airline_powerline_fonts = 1
 
-" Press F4 to toggle highlighting on/off, and show current value.
+" F4 to toggle highlighting on/off
 :set hlsearch
 :noremap <F4> :set hlsearch! hlsearch?<CR>
 
