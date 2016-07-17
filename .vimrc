@@ -39,6 +39,9 @@ set mouse=a
 " paste toggle using F2
 set pastetoggle=<F2>
 
+" case insensitive search
+set ic
+
 " show whole files in vimdiff
 if &diff                             " only for diff mode/vimdiff
   set diffopt=filler,context:1000000 " filler is default and inserts empty lines for sync
