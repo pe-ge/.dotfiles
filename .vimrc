@@ -143,13 +143,6 @@ function SpellCycle()
     endif
 endfunction
 
-" arduino
-let g:vim_arduino_library_path = "/home/pege/arduino-1.6.9/"
-let g:vim_arduino_serial_port = "/dev/ttyUSB0"
-au BufRead,BufNewFile *.pde set filetype=arduino
-au BufRead,BufNewFile *.ino set filetype=arduino
 
-" Conque GDB
-let g:ConqueTerm_Color = 2         " 1: strip color after 200 lines, 2: always with color
-let g:ConqueTerm_CloseOnEnd = 1    " close conque when program ends running
-let g:ConqueTerm_StartMessages = 0 " display warning messages if conqueTerm is configured incorrectly
+" ctrlp
+set runtimepath^=~/.vim/bundle/ctrlp.vim
