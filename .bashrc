@@ -13,8 +13,8 @@ alias df='df -h'
 alias du='du -h'
 alias cal='cal -m'
 alias netctl='sudo netctl'
-alias byt='netctl stop ui; netctl start byt'
-alias ui='netctl stop byt; netctl start ui'
+alias byt='netctl stop-all; netctl start byt'
+alias ui='netctl stop-all; netctl start ui'
 
 PS1='[\u@\h \W]\$ '
 export PATH=/home/pege/.local/bin:$PATH
