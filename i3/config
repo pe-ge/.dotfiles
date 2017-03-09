@@ -25,21 +25,18 @@ exec redshift
 exec --no-startup-id urxvt
 
 # autolock
-exec xautolock -time 10 -locker lock
-exec lock
+#exec xautolock -time 10 -locker lock
+#exec lock
 bindsym Mod4+l exec lock
 
 # volume keys
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 1+
-bindsym XF86AudioLowerVolume exec amixer -q set Master 1-
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
+bindsym XF86AudioLowerVolume exec amixer -q set Master 5%-
 bindsym XF86AudioMute exec amixer set Master toggle
 
 # brightness buttons
 bindsym XF86MonBrightnessUp exec $HOME/.config/i3/brightness_up.sh
 bindsym XF86MonBrightnessDown exec $HOME/.config/i3/brightness_down.sh
-
-# set brightness
-exec xbacklight -set 15
 
 # set default layout to tabbed
 workspace_layout tabbed
