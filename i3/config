@@ -38,6 +38,9 @@ bindsym XF86AudioMute exec amixer set Master toggle
 bindsym XF86MonBrightnessUp exec $HOME/.config/i3/brightness_up.sh
 bindsym XF86MonBrightnessDown exec $HOME/.config/i3/brightness_down.sh
 
+# turnoff screen
+bindsym XF86Display exec xset dpms force off
+
 # set default layout to tabbed
 workspace_layout tabbed
 
