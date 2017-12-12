@@ -25,8 +25,8 @@ exec redshift
 exec --no-startup-id urxvt
 
 # autolock
-#exec xautolock -time 10 -locker lock
-#exec lock
+exec xautolock -time 10 -locker lock
+exec lock
 bindsym Mod4+l exec lock
 
 # volume keys
@@ -52,10 +52,16 @@ mode "$mode_reboot" {
 bindsym $mod+Ctrl+Insert mode "$mode_reboot"
 
 mode "$mode_poweroff" {
-    bindsym $mod+Ctrl+Delete exec --no-startup-id systemctl poweroff, mode "default"  
+    bindsym $mod+Ctrl+Delete exec --no-startup-id systemctl poweroff, mode "default"
     bindsym Escape mode "default"
 }
 bindsym $mod+Ctrl+Delete mode "$mode_poweroff"
+
+mode "$mode_suspend" {
+    bindsym $mod+Ctrl+End exec --no-startup-id systemctl suspend, mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Ctrl+End mode "$mode_suspend"
 
 # disable touchpad
 exec sh $HOME/.config/i3/mouse.sh
