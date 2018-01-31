@@ -146,3 +146,5 @@ endfunction
 
 " ctrlp
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+nnoremap <F5> :edit<CR>
