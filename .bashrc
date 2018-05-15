@@ -19,6 +19,7 @@ alias hoblipilka='netctl stop-all; netctl start hoblipilka'
 alias eduroam='netctl stop-all; netctl start eduroam'
 alias intrak='netctl stop-all; netctl start intrak'
 alias protostar='sudo qemu-system-x86_64 -cdrom /home/pege/Downloads/exploit-exercises-protostar-2.iso -m 1G -net tap -net nic'
+alias cog='sshfs gergel@cogsci.fmph.uniba.sk:. /mnt/cogsci'
 alias ucog='fusermount3 -u /mnt/cogsci'
 
 PS1='[\u@\h \W]\$ '
