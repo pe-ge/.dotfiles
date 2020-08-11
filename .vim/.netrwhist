@@ -1,3 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/usr/local/bin'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/pege/Downloads/IKV/pod1/1023_MarekSokol_f854_1'
+let g:netrw_dirhist_2='/home/pege/motif'
+let g:netrw_dirhist_3='/home/pege/PhD/Dizertacka/Code/astro-esn/datasets/UCR_TS_Archive_2015_orig/50words'
+let g:netrw_dirhist_4='/home/pege/PhD/Dizertacka/Code/astro-esn/setups'
+let g:netrw_dirhist_5='/home/pege/PhD/Cvicim/VMA-1819/DU3/1195_MilanKubala_9c1c_1'

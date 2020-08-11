@@ -1,22 +1,18 @@
-from api import *
+import requests
 
-b = Bittrex('', '')
+btc = requests.get("https://api.bittrex.com/api/v1.1/public/getticker?market=USD-BTC").json()["result"]["Last"]
 
-currency = 'QTUM'
-market = 'BTC-{}'.format(currency)
-buy_rate = 0.00239993
+doge = requests.get('https://api.bittrex.com/api/v1.1/public/getorderbook?market=BTC-DOGE&type=both').json()['result']
+doge_buy = doge['buy'][0]
+doge_buy_rate = doge_buy['Rate']
+doge_buy_price = doge_buy['Quantity'] * doge_buy_rate
+doge_buy_rate = int(doge_buy_rate * 10 ** 8)
+doge_buy_price = round(doge_buy_price, 1)
 
-market_history = b.get_market_history(market, 100)['result']
-buy_volume = 0.0
-sell_volume = 0.0
-for order_details in market_history:
-    quantity = order_details['Quantity']
-    order_type = order_details['OrderType']
-    if order_type == 'BUY':
-        buy_volume += quantity
-    else:
-        sell_volume += quantity
+doge_sell = doge['sell'][0]
+doge_sell_rate = doge_sell['Rate']
+doge_sell_price = doge_sell['Quantity'] * doge_sell_rate
+doge_sell_rate = int(doge_sell_rate * 10 ** 8)
+doge_sell_price = round(doge_sell_price, 1)
 
-current_rate = b.get_ticker('BTC-QTUM')['result']['Last']
-
-print('QTUM {:.2f}% {} {}'.format(current_rate / buy_rate, round(buy_volume), round(sell_volume)))
+print(f'(BTC) {btc} (DOGE) B:{doge_buy_price} {doge_buy_rate} S:{doge_sell_price} {doge_sell_rate}')

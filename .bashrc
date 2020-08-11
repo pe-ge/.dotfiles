@@ -23,10 +23,14 @@ alias protostar='sudo qemu-system-x86_64 -cdrom /home/pege/Downloads/exploit-exe
 alias cog='sshfs gergel@cogsci.fmph.uniba.sk:. /mnt/cogsci'
 alias ucog='fusermount3 -u /mnt/cogsci'
 
-alias rpi='sshfs pege@158.195.198.132:. /mnt/rpi'
+alias rpi='sshfs pege@158.195.214.131:. /mnt/rpi'
+#alias rpi='sshfs pege@192.168.0.101:. /mnt/rpi'
 alias urpi='fusermount3 -u /mnt/rpi'
+
+alias mon2='xrandr --output DP-2 --auto --left-of eDP-1'
+alias monr='xrandr -s 0'
 
 PS1='[\u@\h \W]\$ '
 export PATH=/home/pege/.local/bin:$PATH
-export JAVA_HOME=/usr/lib/jvm/java-9-openjdk/
-export PYTHONPATH="/home/pege/.local/lib/python3.5/site-packages:/home/pege/.local/lib/python3.6/site-packages:/usr/lib/python3.5/site-packages:/usr/lib/python3.6/site-packages"
+export JAVA_HOME=/usr/lib/jvm/java-10-openjdk/
+#export PYTHONPATH="/home/pege/.local/lib/python3.5/site-packages:/home/pege/.local/lib/python3.6/site-packages:/usr/lib/python3.5/site-packages:/usr/lib/python3.6/site-packages"
