@@ -1,0 +1,1 @@
+/home/pege/.dotfiles/screen_record.sh

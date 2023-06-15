@@ -1,9 +1,9 @@
 ! fonts
-URxvt*font:                 xft:DejaVu Sans Mono for Powerline:regular:size=12
-URxvt*imFont:               xft:DejaVu Sans Mono for Powerline:regular:size=12
-URxvt*boldFont:             xft:DejaVu Sans Mono for Powerline:bold:size=12
-URxvt*italicFont:           xft:DejaVu Sans Mono for Powerline:italic:size=12
-URxvt*boldItalicFont:       xft:DejaVu Sans Mono for Powerline:bold:italic:size=12
+URxvt.font:                 xft:JetBrains Mono Medium:size=12
+URxvt.boldFont:             xft:JetBrains Mono Medium:size=12:bold
+URxvt*imFont:               xft:JetBrains Mono Medium:size=12
+URxvt*italicFont:           xft:JetBrains Mono Medium:italic:size=12
+URxvt*boldItalicFont:       xft:JetBrains Mono Medium:bold:italic:size=12
 
 URxvt.clipboard.autocopy: true
 
@@ -13,13 +13,15 @@ URxvt.pointerBlank: true
 URxvt.cutchars: '`"&()*,;<=>?@[]^{|}:~'
 
 Xcursor.theme: Human
-! reduce font spacing
-URxvt.letterSpace: -1
 
 ! clickable URLs
-URxvt.perl-ext-common: default,matcher,resize-font
-URxvt.url-launcher: /usr/bin/opera
+URxvt.perl-ext-common: default,matcher,resize-font,selection-to-clipboard
+URxvt.url-launcher: /usr/bin/google-chrome-stable
 URxvt.matcher.button: 1
+URxvt.keysym.C-Up:     font-size:increase
+URxvt.keysym.C-Down:   font-size:decrease
+URxvt.keysym.C-S-Up:   font-size:incglobal
+URxvt.keysym.C-S-Down: font-size:decglobal
 
 
 ! Solarized color scheme for the X Window System

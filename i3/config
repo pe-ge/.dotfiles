@@ -27,12 +27,13 @@ exec --no-startup-id urxvt
 # autolock
 #exec xautolock -time 10 -locker lock
 #exec lock
-bindsym Mod4+l exec lock
+bindsym Mod4+l exec i3lock
 
 # volume keys
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5%-
 bindsym XF86AudioMute exec amixer set Master toggle
+bindsym XF86AudioMicMute exec amixer set Capture toggle
 
 # brightness buttons
 bindsym XF86MonBrightnessUp exec $HOME/.config/i3/brightness_up.sh
@@ -63,6 +64,23 @@ mode "$mode_suspend" {
 }
 bindsym $mod+Ctrl+End mode "$mode_suspend"
 
+
+# screen record
+mode "$mode_recording" {
+    # Show a visual indicator that the screen is being recorded
+    # statusline "Recording... Press Ctrl+Shift+Home to stop"
+
+    # Bind Ctrl+Shift+Home to stop the recording and exit the "recording" mode
+    # bindsym $mod+Ctrl+Home exec --no-startup-id ~/.config/i3/screen_record.sh
+
+    # Define any other key bindings you want to be available in the "recording" mode
+    # ...
+    bindsym $mod+Ctrl+Home exec --no-startup-id ~/.config/i3/screen_record.sh, mode "default"
+}
+
+# bindsym $mod+Ctrl+Home mode "$mode_record"; exec ffmpeg -f x11grab -framerate 15 -video_size 1920x1080 -i $DISPLAY -c:v libx264 -preset ultrafast "$(date '+%Y-%m-%d_%H-%M-%S')".mp4
+bindsym $mod+Ctrl+Home mode "$mode_recording"; exec --no-startup-id ~/.config/i3/screen_record.sh
+
 # disable touchpad
 exec sh $HOME/.config/i3/mouse.sh
 
@@ -82,7 +100,7 @@ set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:DejaVu Sans Mono 10
+font pango:JetBrains Mono Medium 11
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -100,12 +118,16 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+# move tiling windows via drag & drop by left-clicking into the title bar,
+# or left-clicking anywhere into the window while holding the floating modifier.
+tiling_drag modifier titlebar
+
 # kill focused window
 bindsym $mod+Shift+q kill
 bindsym --release button2 kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -l 10 -nb "#EBCB8B" -nf "#2E3440" -sb "#2E3440" -sf "#EBCB8B"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
