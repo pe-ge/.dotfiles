@@ -1,18 +1,22 @@
 import requests
+from pprint import pprint
 
-btc = requests.get("https://api.bittrex.com/api/v1.1/public/getticker?market=USD-BTC").json()["result"]["Last"]
+def get_orderbook_rate_quantity(orderbook):
+    entry = orderbook[0]
+    entry_rate, entry_quantity = float(entry["rate"]), float(entry["quantity"])
+    # entry_rate_int = int(round(entry_rate * 10 ** 8, 0))
+    entry_rate_int = entry_rate * 10 ** 8
+    entry_quantity_btc = entry_quantity * entry_rate
 
-doge = requests.get('https://api.bittrex.com/api/v1.1/public/getorderbook?market=BTC-DOGE&type=both').json()['result']
-doge_buy = doge['buy'][0]
-doge_buy_rate = doge_buy['Rate']
-doge_buy_price = doge_buy['Quantity'] * doge_buy_rate
-doge_buy_rate = int(doge_buy_rate * 10 ** 8)
-doge_buy_price = round(doge_buy_price, 1)
+    return f"{entry_rate_int:.0f} {entry_quantity_btc:.3f}"
 
-doge_sell = doge['sell'][0]
-doge_sell_rate = doge_sell['Rate']
-doge_sell_price = doge_sell['Quantity'] * doge_sell_rate
-doge_sell_rate = int(doge_sell_rate * 10 ** 8)
-doge_sell_price = round(doge_sell_price, 1)
+def get_status(coin):
+    coin_orderbook = requests.get(f"https://api.bittrex.com/v3/markets/{coin}-BTC/orderbook").json()
+    bid_status = get_orderbook_rate_quantity(coin_orderbook["bid"])
+    ask_status = get_orderbook_rate_quantity(coin_orderbook["ask"])
 
-print(f'(BTC) {btc} (DOGE) B:{doge_buy_price} {doge_buy_rate} S:{doge_sell_price} {doge_sell_rate}')
+    return f"{coin}: {bid_status} | {ask_status}"
+
+srn = get_status("SRN")
+sc = get_status("SC")
+print(f"{sc} | {srn}")
