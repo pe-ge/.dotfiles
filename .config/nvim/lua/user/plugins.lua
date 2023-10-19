@@ -67,6 +67,9 @@ local plugins = {
     --     end
     -- },
     {'tpope/vim-fugitive'},
+    {'windwp/nvim-autopairs'},
+    {'numToStr/Comment.nvim'},
+    {'JoosepAlviste/nvim-ts-context-commentstring'}
 }
 
 require("lazy").setup(plugins, opts)
