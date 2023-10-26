@@ -29,7 +29,7 @@ local plugins = {
     "ThePrimeagen/harpoon",
     {
         "nvim-telescope/telescope.nvim",
-        tag = "0.1.3",
+        --[[ tag = "0.1.3", ]]
         dependencies = { { "nvim-lua/plenary.nvim" } }
     },
     {
@@ -69,7 +69,7 @@ local plugins = {
     {'tpope/vim-fugitive'},
     {'windwp/nvim-autopairs'},
     {'numToStr/Comment.nvim'},
-    {'JoosepAlviste/nvim-ts-context-commentstring'}
+    {'JoosepAlviste/nvim-ts-context-commentstring'},
 }
 
 require("lazy").setup(plugins, opts)
