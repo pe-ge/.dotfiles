@@ -37,20 +37,6 @@ local plugins = {
 		build = ":TSUpdate",
 	},
 	"mbbill/undotree",
-	--[[ {'romgrk/barbar.nvim', ]]
-	--[[     dependencies = { ]]
-	--[[       'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status ]]
-	--[[       'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons ]]
-	--[[     }, ]]
-	--[[     init = function() vim.g.barbar_auto_setup = false end, ]]
-	--[[     opts = { ]]
-	--[[       -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default: ]]
-	--[[       -- animation = true, ]]
-	--[[       -- insert_at_start = true, ]]
-	--[[       -- …etc. ]]
-	--[[     }, ]]
-	--[[     version = '^1.0.0', -- optional: only update when a new 1.x version is released ]]
-	--[[ }, ]]
 
 	-- LSP
 	{ "williamboman/mason.nvim" },
@@ -59,13 +45,6 @@ local plugins = {
 	{ "neovim/nvim-lspconfig" },
 	{ "hrsh7th/cmp-nvim-lsp" },
 
-	-- {
-	--     'jose-elias-alvarez/null-ls.nvim',
-	--     event = 'VeryLazy',
-	--     opts = function()
-	--         return require "user.null-ls"
-	--     end
-	-- },
 	{ "tpope/vim-fugitive" },
 
 	{ "windwp/nvim-autopairs" },
