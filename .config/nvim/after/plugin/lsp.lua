@@ -13,6 +13,7 @@ lsp_zero.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+  vim.keymap.set("n", "<leader>q", function() vim.lsp.buf.code_action() end, opts)
 end)
 
 require('mason').setup({})
@@ -26,6 +27,15 @@ require('mason-lspconfig').setup({
     end,
   }
 })
+
+require("lspconfig").clangd.setup {
+    cmd = {
+        "clangd",
+        "--background-index",
+        "--header-insertion=never",
+        "--suggest-missing-includes",
+    }
+}
 
 -- local cmp = require('cmp')
 -- local cmp_select = {behavior = cmp.SelectBehavior.Select}
