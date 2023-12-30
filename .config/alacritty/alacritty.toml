@@ -1,0 +1,52 @@
+import = ["/home/pege/.config/alacritty/catppuccin/catppuccin-macchiato.toml"]
+live_config_reload = true
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[font]
+size = 8
+
+[font.bold]
+family = "JetBrains Mono NF"
+style = "Bold"
+
+[font.bold_italic]
+family = "JetBrains Mono NF"
+style = "BoldItalic"
+
+[font.italic]
+family = "JetBrains Mono NF"
+style = "MediumItalic"
+
+[font.normal]
+family = "JetBrains Mono NF"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "Return"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[72;5u"
+key = "H"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[76;5u"
+key = "L"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[88;5u"
+key = "X"
+mods = "Control|Shift"
+
+[scrolling]
+history = 10000
+multiplier = 3
