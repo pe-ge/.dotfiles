@@ -52,6 +52,9 @@ local plugins = {
 	{ "JoosepAlviste/nvim-ts-context-commentstring" },
 
 	{ "stevearc/conform.nvim", opts = {} },
+
+	{ "mfussenegger/nvim-dap" },
+	{ "rcarriga/nvim-dap-ui" },
 }
 
 require("lazy").setup(plugins, opts)
